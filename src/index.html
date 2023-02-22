@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Notepad</title>
+    <link rel="stylesheet" href="index.css" />
+    
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="fontContainer">
+      <div class="fonts">
+        <button class="font1 f" onclick="fontsManager('1'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+        <button class="font2 f" onclick="fontsManager('2'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+        <button class="font3 f" onclick="fontsManager('3'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+        <button class="font4 f" onclick="fontsManager('4'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+        <button class="font5 f" onclick="fontsManager('5'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+        <button class="font6 f" onclick="fontsManager('6'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+        <button class="font7 f" onclick="fontsManager('7'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+        <button class="font8 f" onclick="fontsManager('8'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+        <button class="font9 f" onclick="fontsManager('9'); buttonManager('fonts')">Example Text<hr class="underline"></button>
+
+        <button class="option" onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" style="width: 300px;" onclick="buttonManager('fonts')">Cancel</button>
+      </div>
+    </div>
+
+    <div class="toolbarcontainer">
+      <div class="toolbar">
+        <button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i" onclick="saveAs('asf')"><i class="fa-solid fa-floppy-disk"></i></button>
+        <button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i" onclick="openFile()"><i class="fa-solid fa-folder-open"></i></button>
+        <div class="space"></div>
+        
+        <button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i" style="margin-left: 2%;" onclick="buttonManager('color')"><input class="colorpicker" type="color"><i class="fa-solid fa-palette"></i><button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i" style="margin-left: 0%;" onclick="setColor('all')"><i class="fa-solid fa-fill"></i></button>
+        <button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i left" onclick="buttonManager('left')"><i class="fa-solid fa-align-left"></i></button>
+        <button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i middle" onclick="buttonManager('middle')"><i class="fa-solid fa-align-center"></i></button>
+        <button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i right" onclick="buttonManager('right')"><i class="fa-solid fa-align-right"></i></button>
+        <div class="space"></div>
+        <button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i" onclick="buttonManager('fonts')"><i class="fa-solid fa-font"></i></button>
+        <button onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="i" onclick="appearance(); appearanceFunctions(false)"><i class="fa-solid fa-file-lines"></i></button>
+      </div>
+    </div>
+
+    <div class="encryption">
+      <p style="color: var(--hoverText);">Do you want your file to be encrypted?</p>
+      <div style="width: 500px; height: 200px; display: flex; justify-content: center; flex-direction: column;">
+        <div style="width: 500px; display: flex; justify-content: space-between;">
+        <button class="option" style="width: 240px;" onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" onclick="saveAs(true)">Yes</button>
+        <button class="option" style="width: 240px;" onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" onclick="saveAs(false)">No</button>
+        </div>
+        
+        <button class="option" style="width: 500px;" onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" onclick="saveAs('x')">Cancel</button>
+      </div>
+    </div>
+
+    <div class="appearance">
+      <div></div>
+      
+
+      <div style="display: flex; justify-content: space-around; align-items: center; width: 500px; color: var(--hoverText);" class="settingVarContainer">Page: <input class="colorpickerPage" type="color">   Background: <input class="colorpickerBackground" type="color"></div>
+
+      <div style="width: 500px; display: block;">
+        <button class="option" onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" onclick="appearanceFunctions(true)">Apply</button>
+        <button class="option" onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" onclick="appearanceFunctions('exit')">Cancel</button>
+      </div>
+      </div>
+
+    </div>
+
+    <div class="paper">
+      <div class="header"><button onclick="deletePages(this)" onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)" class="deletePage">-</button></div>
+      <div class="line">
+        <input class="text"><hr class="underline">
+      </div>
+      
+      <div class="footer"></div>
+    </div>
+
+    <div class="button">
+      <button class="addPage" onclick="addPages()" onmouseover="changeOnHoverEnter(this);" onmouseout="changeOnHoverLeave(this)">+</button>
+    </div>
+
+    
+    <script defer src="frontend.js"></script>
+    <script src="https://kit.fontawesome.com/8e75413cde.js" crossorigin="anonymous"></script>
+  </body>
+</html>

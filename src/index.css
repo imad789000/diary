@@ -1,0 +1,423 @@
+body{
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  overflow-x: hidden;
+}
+
+:root{
+  --hover: rgb(0,0,0);
+  --hoverText: rgb(212, 205, 106);
+}
+
+.paper, .paperDemo {
+  padding: 0%;
+  margin: 0%;
+  align-self: center;
+  background-color: rgb(255, 244, 181);
+  height: 990px;
+  width: 800px;
+  margin-bottom: 10px;
+}
+
+.text, .demoText{
+  margin: 0px;
+  padding: 0px;
+  font-size: larger;
+  width: 790px;
+  height: 30px;
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+}
+
+.line, .firstline, .header, .footer{
+  width: 800px;
+  height: 30px;
+  margin-top: 0px;
+
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.deletePage{
+  margin-right: 30px;
+  font-size: 3rem;
+  color: var(--hover);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s linear color;
+}
+
+.deletePageHover{
+  color: var(--hoverText);
+}
+
+.underline{
+  border: 1px dashed #8c8b8b;
+  align-self: end;
+  margin-top: 0px;
+  background-color: transparent;
+
+}
+
+.addPage{
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  background-color: var(--hoverText);
+  color: var(--hover);
+  cursor: pointer;
+  transition: 0.2s linear background-color, 0.2s linear color;
+}
+
+.addPagehover{
+  background-color: var(--hover);
+  color: var(--hoverText);
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.toolbar{
+  width: 760px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  
+}
+
+.toolbarcontainer{
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0%;
+}
+
+.space{
+  height: 20px;
+  width: 5px;
+  background-color: rgb(255, 244, 181);
+  margin-left: 15px;
+  border-radius: 10px;
+}
+
+.i{
+  background:none;
+  display: flex;
+  align-items: center;
+  font-size: medium;
+  border: none;
+  margin-left: 7%;
+  color: var(--hoverText);
+  transition: 0.2s linear color;
+  cursor: pointer;
+}
+.iHover{
+  color: var(--hover);
+}
+
+.clicked{
+  color: rgb(0, 0, 0);
+}
+
+.colorpicker{
+  display: block;
+  height: 30px;
+  width: 30px;
+  border: none;
+  background-color: transparent;
+}
+
+.colorpickerPage , .colorpickerBackground{
+  height: 30px;
+  width: 30px;
+  border: none;
+  background-color: transparent;
+}
+
+.fontContainer{
+  position: absolute;
+  top: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 990px;
+  background-color: rgba(0,0,0, 0.5);
+  opacity: 0;
+  margin-top: -10000px;
+  transition: 0.6s linear opacity;
+}
+
+.fonts{
+  background-color: aliceblue;
+  width: 300px;
+  margin-top: -200px;
+  height: 450px;
+  border-width: 6px;
+  border-style: dotted;
+  position: absolute;
+  transition: 1s linear margin-right;
+}
+
+.activated{
+  opacity: 1;
+}
+
+@font-face {
+  font-family: 'SassyFrass';
+  src: url(fonts/SassyFrass-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Itim';
+  src: url(fonts/Itim-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Babylonica';
+  src: url(fonts/Babylonica-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url(fonts/Oswald.ttf);
+}
+
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url(fonts/LibreBaskerville-Italic.ttf);
+}
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url(fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Lobster';
+  src: url(fonts/Lobster-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url(fonts/Pacifico-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'ShadowsIntoLight';
+  src: url(fonts/ShadowsIntoLight-Regular.ttf);
+}
+
+.applyFont1{
+  font-family: 'SassyFrass', cursive;
+  font-size: 3rem;
+}
+
+.applyFont2{
+  font-family: 'Itim', cursive;
+  font-size: 1.2rem;
+}
+
+.applyFont3{
+  font-family: 'Babylonica', cursive;
+  font-size: 2.3rem;
+}
+
+.applyFont4{
+  font-family: 'Oswald', cursive;
+  font-size: 1.5rem;
+}
+
+.applyFont5{
+  font-family: 'LibreBaskerville', cursive;
+  font-size: 1.5rem;
+}
+
+.applyFont6{
+  font-family: 'BebasNeue', cursive;
+  font-size: 1.5rem;
+}
+
+.applyFont7{
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
+}
+
+.applyFont8{
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;
+}
+
+.applyFont9{
+  font-family: 'ShadowsIntoLight', cursive;
+  font-size: 1.5rem;
+}
+
+.font1{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  color: black;
+  font-size: 2rem;
+  font-family: 'SassyFrass', cursive;
+}
+
+.font2{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  font-size: 1.2rem;
+  color: black;
+  font-family: 'Itim', cursive;
+}
+
+.font3{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Babylonica', cursive;
+}
+
+.font4{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Oswald', cursive;
+}
+
+.font5{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'LibreBaskerville', cursive;
+}
+
+.font6{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'BebasNeue', cursive;
+}
+
+.font7{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Lobster', cursive;
+}
+
+.font8{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Pacifico', cursive;
+}
+
+.font9{
+  background-color: var(--hoverText);
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'ShadowsIntoLight', cursive;
+}
+
+.font1:hover ,.font2:hover, .font3:hover, .font4:hover, .font5:hover, .font6:hover, .font7:hover, .font8:hover, .font9:hover{
+  cursor: pointer;
+}
+
+.appearance{
+  width: 100%;
+  height: 990px;
+  position: absolute;
+  top: 0%;
+  background-color: rgba(0,0,0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  margin-top: -10000px;
+  transition: 0.6s linear opacity;
+}
+
+.appearanceActivated
+{
+  opacity: 1;
+  transition: 0.6s linear opacity;
+}
+
+.option{
+  margin-top: 20px;
+  width: 230px;
+  height: 40px;
+  background-color: var(--hoverText);
+  color: var(--hover);
+  cursor: pointer;
+  border-radius: 40px;
+  border: none;
+  transition: 0.2s linear color, 0.2s linear background-color;
+
+}
+
+.optionHover{
+  color: var(--hoverText);
+  background-color: var(--hover);
+}
+
+.settingVarContainer{
+  margin-top: 20px;
+}
+
+.encryption{
+  width: 100%;
+  height: 990px;
+  position: absolute;
+  top: 0%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10000px;
+  opacity: 0;
+  transition: 0.6s linear opacity;
+}
+
+.encryptionActive{
+  opacity: 1;
+}
