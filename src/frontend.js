@@ -14,7 +14,7 @@ function colors()
     var colorsList = null
     const { readFile, writeFile } = require('fs');
 
-    readFile("setting.txt", function(err, buf) {
+    readFile("src/setting.txt", function(err, buf) {
         //getting file info
         colorsList = buf.toString().split("\n")
 
@@ -251,11 +251,11 @@ function fontsManager(whatFont)
     let writeFontSetting = function (option) {
         const { readFile, writeFile } = require('fs');
 
-        readFile("setting.txt", function(err, buf) {
+        readFile("src/setting.txt", function(err, buf) {
             let info = buf.toString().split("\n")
             info[2] = option
             const { writeFile } = require('fs')
-            writeFile("setting.txt", info[0] + "\n" + info[1] + "\n" + info[2],err => {
+            writeFile("src/setting.txt", info[0] + "\n" + info[1] + "\n" + info[2],err => {
                 colors()
                 let fontsTab = document.querySelector(".fonts")
                 fontsTab.classList.remove("activated")
